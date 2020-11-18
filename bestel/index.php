@@ -13,7 +13,7 @@ $image_url = $_GET['image_url'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <title>Paypal Integration Test</title>
+    <title>Product Bestellen</title>
 </head>
 <body>
 
