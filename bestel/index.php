@@ -1,8 +1,5 @@
 <?php
-$product_name = $_GET['name'];
-$product_price = $_GET['price'];
-$image_url = $_GET['image_url'];
-
+$product_id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +24,7 @@ $image_url = $_GET['image_url'];
           <hr class="mt-1">
         </div>
         <div class="col-12">
+        <form class="paypal" action="payments.php" method="post" id="paypal_form">
 
           <div class="row mx-4">
             <div class="col-12 mb-2">
@@ -41,15 +39,9 @@ $image_url = $_GET['image_url'];
           </div>
 
           
-          <div class="row mt-3 mx-4">
-            <div class="col-12">
-              <label class="order-form-label" for="date-picker-example">Date</label>
-            </div>
-            <div class="col-12">
-              <input class="order-form-input datepicker" placeholder="Selected date" type="text" id="date-picker-example" required>
-            </div>
-          </div>
+      
 
+      
           <div class="row mt-3 mx-4">
             <div class="col-12">
               <label class="order-form-label">Adress</label>
@@ -58,7 +50,7 @@ $image_url = $_GET['image_url'];
               <input class="order-form-input" placeholder="Street Address" required>
             </div>
             <div class="col-12 mt-2">
-              <input class="order-form-input" placeholder="Street Address Line 2" required>
+              <input class="order-form-input" placeholder="Street Address Line 2" >
             </div>
             <div class="col-12 col-sm-6 mt-2 pr-sm-2">
               <input class="order-form-input" placeholder="City" required>
@@ -77,21 +69,20 @@ $image_url = $_GET['image_url'];
           <div class="row mt-3 mx-4">
             <div class="col-12">
               <div class="form-check">
-                <img src="<?= $image_url ?>" alt="" srcset="" style="width:80%; float: left;">
+                <img src="" alt="" id="product_image" srcset="" style="width:80%; float: left;">
               </div>
               <div class="col-12" style="float: left;">
-                  <h4 class="product_name"> <?= $product_name ?></h4>
+                  <h4 class="product_name" id="product_name"></h4>
               </div>
 
               <div class="col-12" style="float: left;">
-                  <h4 class="price" > &euro;<?= $product_price ?></h4>
+                  <h4 class="price" id="product_price"></h4>
               </div>
             </div>
           </div>
 
           <div class="row mt-3">
             <div class="col-12">
-            <form class="paypal" action="payments.php" method="post" id="paypal_form">
                 <input type="hidden" name="cmd" value="_xclick" />
                 <input type="hidden" name="no_note" value="1" />
                 <input type="hidden" name="lc" value="EUR" />
@@ -100,7 +91,7 @@ $image_url = $_GET['image_url'];
                 <input type="hidden" name="last_name" value="Customer's Last Name" />
                 <input type="hidden" name="payer_email" value="customer@example.com" />
                 <input type="hidden" name="item_number" value="123456" / >
-                <input type="hidden" name="product_price" value="<?= $product_price ?>" / >
+                <input type="hidden" name="product_price" id="product_price_form" value="<?= $product_price ?>" / >
                 <input type="submit" name="submit" value="Submit Payment" class="btn btn-dark d-block mx-auto btn-submit"/>
             </form>
             </div>
@@ -114,8 +105,10 @@ $image_url = $_GET['image_url'];
     
 
     <script>
-        // Data Picker Initialization
-    $('.datepicker').pickadate();
+    var product_id = "<?php echo $product_id ?>";
+
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

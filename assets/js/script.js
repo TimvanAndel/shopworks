@@ -20,7 +20,7 @@ const showItem = () => {
         for(e = 0; e <= data.length - 1; e++){
 
             for(i = 0; i <= data[e].products.length - 1; i++){
-            console.log(data[e].products[i].id);
+            // console.log(data[e].products[i].id);
 
 
             if(product_id == data[e].products[i].id){

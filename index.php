@@ -1,8 +1,6 @@
 <?php
 $product_id = $_GET['id'];
-$product_name = $_GET['name'];
-$product_price = $_GET['price'];
-$image_url = $_GET['image_url'];
+
 ?>
 
 
@@ -42,7 +40,7 @@ $image_url = $_GET['image_url'];
             <!-- Product Pricing -->
             <div class="product-price">
               <span id="product_price"></span>
-              <a href="bestel/index.php?id=<?= $product_id; ?>&price=<?= $product_price; ?>&image_url=<?= $image_url; ?>&name=<?= $product_name; ?>" class="cart-btn">Bestellen</a>
+              <a href="bestel/index.php?id=<?= $product_id; ?>" class="cart-btn">Bestellen</a>
             </div>
           </div>
         </main>

@@ -64,7 +64,7 @@ const showItem = () => {
                     var product_qr = document.createElement('img');
                     product_qr.setAttribute("id", "product_qr_" + e + "_" + i);
                     product_qr.setAttribute("class", "product_qr");
-                    product_qr.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + product_detail_path + data[e].products[i].id + "&price=" +data[e].products[i].price + "&image_url=" + data[e].products[i].imgUrl + "&name=" + data[e].products[i].name;
+                    product_qr.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + product_detail_path + data[e].products[i].id;
 
                     var product_name = document.createElement('h1');
                     product_name.setAttribute('id', "product_name_" + e + "_" + i)
